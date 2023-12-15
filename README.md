@@ -14,7 +14,7 @@ Voor het eerste gebruik deze library initialiseren met een api key zoals volgt:
 ```javascript
 const {
     updateMultiplanner
-} = await import('multiplanner');
+} from 'multiplanner';
 
 updateMultiplanner(NS_API_KEY_HIER);
 ```
@@ -28,7 +28,7 @@ Behalve de `updateMultiplanner` functie stelt deze library ook de multiReis en f
 const {
     multiReis,
     formatteerReis
-} = await import('multiplanner');
+} from 'multiplanner';
 
 // Beschrijf de te plannen route
 const route = `

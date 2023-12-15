@@ -10,11 +10,18 @@
 
 import { setConfig } from '#f/setConfig.js';
 
-import haalDataOp from '#f/haalDataOp.js';
+import getConfigValue from '#f/getConfigValue.js';
 
 export default async (nsapi) => {
-    const spoorkaart = await haalDataOp('/Spoorkaart-API/api/v1/spoorkaart/', nsapi);
-    const stations = await haalDataOp('/reisinformatie-api/api/v2/stations', nsapi);
+    const config = {ns_app_key_primary: nsapi};
+    setConfig(config, 'config');
+
+
+    const haalDataOp = (await import('#f/haalDataOp.js')).default;
+
+
+    const spoorkaart = await haalDataOp('/Spoorkaart-API/api/v1/spoorkaart/');
+    const stations = await haalDataOp('/reisinformatie-api/api/v2/stations');
 
     const geformatterdestations = stations.payload.filter((station) => station.land == "NL").map((station) => ({
         code: station.code.toLowerCase(),
@@ -22,16 +29,13 @@ export default async (nsapi) => {
         coordinaat: [station.lng, station.lat]
     }));
 
-    const config = {ns_app_key_primary: nsapi}
-
     setConfig(geformatterdestations, 'stations');
     setConfig(spoorkaart, 'spoorkaart');
-    setConfig(config, 'config');
-
-    const planReis = await import('#f/planReis.js');
-    const multiReis = await import('#f/multiReis.js');
-    const formatteerReis = await import('#f/formatteerReis.js');
-    const updateMultiplanner = await import('#f/updateMultiplanner.js');
+    
+    const planReis = (await import('#f/planReis.js')).default;
+    const multiReis = (await import('#f/multiReis.js')).default;
+    const formatteerReis = (await import('#f/formatteerReis.js')).default;
+    const updateMultiplanner = (await import('#f/updateMultiplanner.js')).default;
 
     return {
         planReis,

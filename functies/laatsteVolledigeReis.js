@@ -1,8 +1,8 @@
 import haalTripOp from '#f/haalTripOp.js';
 import haalReisOp from '#f/haalReisOp.js';
-const {
+import {
     laatstAankomendeGeldigeRit
-} = await import('#f/interpreters.js');
+} from '#f/interpreters.js';
 
 export default async (van, naar, moment, volgRit) => {
     const reis = await haalReisOp(van.toUpperCase(), naar.toUpperCase(), new Date(moment - - 2 * 60 * 1000).toISOString(), true);

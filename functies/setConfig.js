@@ -1,5 +1,5 @@
 const config = {};
-const setConfig = (k, v) => config[k] = v;
+const setConfig = (v, k) => config[k] = v;
 
 export {
     setConfig,

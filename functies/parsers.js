@@ -7,7 +7,7 @@ const losseregels = (tekst) => tekst
     .split("\n")
     .filter(bestaat);
 
-export default {
+export {
     bestaat,
     parseDatumRelatief,
     losseregels

@@ -1,10 +1,10 @@
-const {
+import {
     maakTabel,
     formateerTijdsduurMinuten,
     formatteerTijd,
     vertaalZijde,
     formatteerDatum
-} = await import("#f/formatters.js");
+} from "#f/formatters.js";
 
 export default (reis) => {
     const infoTabel = maakTabel([

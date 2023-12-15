@@ -1,9 +1,9 @@
 import polylineAfstand from '#f/polylineAfstand.js';
 import stationsLijstPolyline from '#f/stationsLijstPolyline.js';
 import coordinaatAfstand from '#f/coordinaatAfstand.js';
-const {
+import {
     extractLeg
-} = await import('#f/interpreters.js');
+} from '#f/interpreters.js';
 
 const reisStats = (trips) => {
     const legs = [];

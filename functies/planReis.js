@@ -5,12 +5,12 @@ import stationsLijstPolyline from '#f/stationsLijstPolyline.js';
 import coordinaatAfstand from '#f/coordinaatAfstand.js';
 import zoekStation from '#f/zoekStation.js';
 import vindStation from '#f/vindStation.js';
-const {
+import {
     aankomstTijd,
     vertrekTijd,
     aankomstTrein,
     vertrekTrein
-} = await import('#f/interpreters.js');
+} from '#f/interpreters.js';
 import reisStats from '#f/reisStats.js';
 
 const berekenWachttijden = (reis) => {
