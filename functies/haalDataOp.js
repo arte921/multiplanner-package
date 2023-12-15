@@ -1,6 +1,7 @@
-const https = import('https');
+import https from 'https';
 
-const getConfigValue = import('#f/getConfigValue.js');
+import getConfigValue from '#f/getConfigValue.js';
+
 const config = getConfigValue("config");
 
 const doeRequest = (opties) => {

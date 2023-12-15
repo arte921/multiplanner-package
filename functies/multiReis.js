@@ -1,11 +1,11 @@
-const chrono = import('chrono-node');
+import chrono from 'chrono-node';
 
-const invertedSwitch = import('#f/invertedSwitch.js');
+import invertedSwitch from '#f/invertedSwitch.js';
 const {
     bestaat,
     parseDatumRelatief,
     losseregels
-} = import('#f/parsers.js');
+} = await import('#f/parsers.js');
 
 const reisScriptNaarRequest = (reisScript) => {
     const regels = losseregels(reisScript);

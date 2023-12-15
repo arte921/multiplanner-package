@@ -1,4 +1,4 @@
-const getConfigValue = import('#f/getConfigValue.js');
+import getConfigValue from '#f/getConfigValue.js';
 const spoorkaart = getConfigValue("spoorkaart");
 
 export default (stationa, stationb) => {

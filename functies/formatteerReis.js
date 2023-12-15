@@ -4,7 +4,7 @@ const {
     formatteerTijd,
     vertaalZijde,
     formatteerDatum
-} = import("#f/formatters.js");
+} = await import("#f/formatters.js");
 
 export default (reis) => {
     const infoTabel = maakTabel([

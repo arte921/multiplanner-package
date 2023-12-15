@@ -1,4 +1,4 @@
-const coordinaatAfstand = import("#f/coordinaatAfstand");
+import coordinaatAfstand from "#f/coordinaatAfstand.js";
 
 export default (polyline) => {
     let afstand = 0;

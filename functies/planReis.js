@@ -1,17 +1,17 @@
-const vroegsteVolledigeReis = import('#f/vroegsteVolledigeReis.js');
-const laatsteVolledigeReis = import('#f/laatsteVolledigeReis.js');
-const polylineAfstand = import('#f/polylineAfstand.js');
-const stationsLijstPolyline = import('#f/stationsLijstPolyline.js');
-const coordinaatAfstand = import('#f/coordinaatAfstand.js');
-const zoekStation = import('#f/zoekStation.js');
-const vindStation = import('#f/vindStation.js');
+import vroegsteVolledigeReis from '#f/vroegsteVolledigeReis.js';
+import laatsteVolledigeReis from '#f/laatsteVolledigeReis.js';
+import polylineAfstand from '#f/polylineAfstand.js';
+import stationsLijstPolyline from '#f/stationsLijstPolyline.js';
+import coordinaatAfstand from '#f/coordinaatAfstand.js';
+import zoekStation from '#f/zoekStation.js';
+import vindStation from '#f/vindStation.js';
 const {
     aankomstTijd,
     vertrekTijd,
     aankomstTrein,
     vertrekTrein
-} = import('#f/interpreters.js');
-const reisStats = import('#f/reisStats.js');
+} = await import('#f/interpreters.js');
+import reisStats from '#f/reisStats.js';
 
 const berekenWachttijden = (reis) => {
     for (const station of reis) {

@@ -28,7 +28,7 @@
   "type": "module",
   "imports": {
     "#f/*": {
-      "default": "#f/functies/*"
+      "default": "./functies/*"
     }
   }
 }

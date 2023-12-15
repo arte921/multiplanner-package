@@ -1,5 +1,5 @@
-const vindStation = import('#f/vindStation.js');
-const haalPolylineOp = import("#f/haalPolylineOp.js");
+import vindStation from '#f/vindStation.js';
+import haalPolylineOp from "#f/haalPolylineOp.js";
 
 export default (stations) => {
     const polyline = [];

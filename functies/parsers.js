@@ -1,4 +1,4 @@
-const chrono = import('chrono-node');
+import chrono from 'chrono-node';
 
 const bestaat = (element) => !!element && !element.match(/^(!.*| *$)/);
 const parseDatumRelatief = referentiedatum => dateString => chrono.parseDate(dateString, referentiedatum);

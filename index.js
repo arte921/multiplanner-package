@@ -10,7 +10,7 @@
 
 import { setConfig } from '#f/setConfig.js';
 
-const haalDataOp = import('#f/haalDataOp.js');
+import haalDataOp from '#f/haalDataOp.js';
 
 export default async (nsapi) => {
     const spoorkaart = await haalDataOp('/Spoorkaart-API/api/v1/spoorkaart/', nsapi);
@@ -22,14 +22,16 @@ export default async (nsapi) => {
         coordinaat: [station.lng, station.lat]
     }));
 
+    const config = {ns_app_key_primary: nsapi}
+
     setConfig(geformatterdestations, 'stations');
     setConfig(spoorkaart, 'spoorkaart');
     setConfig(config, 'config');
 
-    const planReis = import('#f/functies/planReis.js');
-    const multiReis = import('#f/functies/multiReis.js');
-    const formatteerReis = import('#f/functies/formatteerReis.js');
-    const updateMultiplanner = import('#f/functies/updateMultiplanner.js');
+    const planReis = await import('#f/planReis.js');
+    const multiReis = await import('#f/multiReis.js');
+    const formatteerReis = await import('#f/formatteerReis.js');
+    const updateMultiplanner = await import('#f/updateMultiplanner.js');
 
     return {
         planReis,
