@@ -1,5 +1,5 @@
-const readJSONSync = import('#f/readJSONSync.js');
-const stations = [].concat(...readJSONSync("stations").map((station) => station.namen));
+const getConfigValue = import('#f/getConfigValue.js');
+const stations = [].concat(...getConfigValue("stations").map((station) => station.namen));
 const stringSimilarity = import("string-similarity");
 const vindStation = import('#f/vindStation.js');
 

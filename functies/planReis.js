@@ -11,7 +11,6 @@ const {
     aankomstTrein,
     vertrekTrein
 } = import('#f/interpreters.js');
-const writeJSON = import('#f/writeJSON.js');
 const reisStats = import('#f/reisStats.js');
 
 const berekenWachttijden = (reis) => {

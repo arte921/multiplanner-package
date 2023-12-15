@@ -1,7 +1,7 @@
 const https = import('https');
 
-const readJSONSync = import('#f/readJSONSync.js');
-const config = readJSONSync("config");
+const getConfigValue = import('#f/getConfigValue.js');
+const config = getConfigValue("config");
 
 const doeRequest = (opties) => {
     let antwoord = '';

@@ -1,5 +1,5 @@
-const readJSONSync = import('#f/readJSONSync.js');
-const spoorkaart = readJSONSync("spoorkaart");
+const getConfigValue = import('#f/getConfigValue.js');
+const spoorkaart = getConfigValue("spoorkaart");
 
 export default (stationa, stationb) => {
     const rechtefeature = spoorkaart.payload.features.find((feature) => feature.properties.from == stationa.code && feature.properties.to == stationb.code);

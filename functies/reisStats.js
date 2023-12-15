@@ -4,7 +4,6 @@ const coordinaatAfstand = import('#f/coordinaatAfstand.js');
 const {
     extractLeg
 } = import('#f/interpreters.js');
-const writeJSON = import('#f/writeJSON.js');
 
 const reisStats = (trips) => {
     const legs = [];

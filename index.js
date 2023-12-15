@@ -8,6 +8,8 @@
  *  Main index file
  */
 
+import { setConfig } from '#f/setConfig.js';
+
 const haalDataOp = import('#f/haalDataOp.js');
 
 export default async (nsapi) => {
@@ -20,20 +22,19 @@ export default async (nsapi) => {
         coordinaat: [station.lng, station.lat]
     }));
 
-    writeJSON(geformatterdestations, 'stations');
-    writeJSON(spoorkaart, 'spoorkaart');
-    writeJSON(config, 'config');
-};
+    setConfig(geformatterdestations, 'stations');
+    setConfig(spoorkaart, 'spoorkaart');
+    setConfig(config, 'config');
 
-const planReis = import('#f/functies/planReis.js');
-const multiReis = import('#f/functies/multiReis.js');
-const formatteerReis = import('#f/functies/formatteerReis.js');
-const updateMultiplanner = import('#f/functies/updateMultiplanner.js');
+    const planReis = import('#f/functies/planReis.js');
+    const multiReis = import('#f/functies/multiReis.js');
+    const formatteerReis = import('#f/functies/formatteerReis.js');
+    const updateMultiplanner = import('#f/functies/updateMultiplanner.js');
 
-//Export all of the modules
-export {
-    planReis,
-    multiReis,
-    formatteerReis,
-    updateMultiplanner
+    return {
+        planReis,
+        multiReis,
+        formatteerReis,
+        updateMultiplanner
+    };
 };
